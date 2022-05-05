@@ -1,77 +1,11 @@
 import React from 'react'
 import img1 from '../../assets/img/login.png';
 import { Link, useNavigate } from 'react-router-dom';
-const axios = require('axios');
-import { useState } from 'react';
+
 
 export const LoginBlock = () => {
 
-  const [show, setShow] = useState(false);
-
-
-  const [userDetails, setUserDetails] = React.useState({email: '', password: ''});
-  const nevigate = useNavigate();
-  function handleChange(e){
-    const {name, value} = e.target;
-    setUserDetails(userDetails => {
-        return {
-            ...userDetails,
-            [name]: value
-        }
-    });
-  }
-  async function handleClick(e){
-    e.preventDefault();
-    console.log(userDetails);
-    /*const userData = await fetch('/api/creator/login', {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userDetails),
-    });
-
-    const user = await userData.json();
-
-    console.log(user);
-
-    if(user) nevigate('/home')*/
-
-    axios.post('http://localhost:3000/api/employer/login', userDetails)
-    .then(function (response) {
-      // handle success
-      console.log(response);
-      const user=JSON.stringify(response);
-      if(user) nevigate('/brandlanding');
-      /*console.log(response.data);
-      setName(response.data[0].name);
-      (response.data).forEach(newValue=>
-        {
-          console.log("executed")
-          setArray(oldArray => [...oldArray,newValue])
-          setNum(num+1);
-        }
-      )*/
-      
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-      setShow(true);
-      console.log(show);
-      //const myTimeout = setTimeout(setShow(false), 3000);
-
-    })
-    .then(function () {
-      
-      //console.log("printing array 1",Array);
-      //console.log("printing number",name);
-      // always executed
-    });
-    
-  }
+  
   /* useEffect(() => {
   
     instance.get('/')
@@ -103,38 +37,62 @@ export const LoginBlock = () => {
     
     
   },[]);*/
-  
+  const [userDetails, setUserDetails] = React.useState({email: '', password: ''});
+  const nevigate = useNavigate();
+  function handleChange(e){
+    const {name, value} = e.target;
+    setUserDetails(userDetails => {
+        return {
+            ...userDetails,
+            [name]: value
+        }
+    });
+  }
+  async function handleClick(e){
+    e.preventDefault();
+    console.log(userDetails);
+    const userData = await fetch('http://localhost:3000/api/creator/login', {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'include',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userDetails),
+    });
+
+    const user = await userData.json();
+
+    console.log("user",user);
+
+    if(user) nevigate('/home')
+  }
   return (
     <>
-        <div class="brand-login-container">
-        {(show)&&
+        <div class="login-container">
 
-<div class="alert alert-danger text-center" role="alert">
-ERROR.PLEASE TRY AGAIN
-
-</div>}
-        <div class=" brand-login-logo">                
+        <div class=" login-logo">                
         <div class=" site-logo site-logo-text">
               <a href="index-4.html">
                <i class="flaticon-video-camera"></i>
                <div class="site-logo-text">
                 <h3>BrandUp</h3>
-                <h7 style={{fontSize:"20px"}}>Influencer site</h7>
+                <h6>Influencer site</h6>
               </div>
             </a>
           </div>
           </div>
-                        <div class="brand-login-form">
-                            <h2>Brand Log in</h2>
-                            <form onSubmit={handleClick}>
-                                <div class="brand-input-group input-group-two mb-20">
-                                    <input onChange={handleChange} value={userDetails.email} type="email" placeholder="Email" name="email" required/>
+                        <div class="login-form">
+                            <h2>Creator Log in</h2>
+                            <form>
+                                <div class="input-group input-group-two mb-20">
+                                    <input onChange={handleChange} value={userDetails.email} type="email" placeholder="Email" name="email"/>
                                 </div>
-                                <div class="brand-input-group input-group-two mb-30">
-                                    <input onChange={handleChange} value={userDetails.password} type="password" placeholder="Password" name="password" required/>
+                                <div class="input-group input-group-two mb-30">
+                                    <input onChange={handleChange} value={userDetails.password} type="password" placeholder="Password" name="password"/>
                                 </div>
-                                <a href="brand-login.html#">Forgot Password?</a>
-                                <button type="submit"  class="brand-main-btn btn-filled mt-20 login-btn">Login</button>
+                                <a href="login.html#">Forgot Password?</a>
+                                <button onClick={handleClick} class="main-btn btn-filled mt-20 login-btn">Login</button>
                                 <div class="form-seperator">
                                     <span>OR</span>
                                 </div>
@@ -143,7 +101,7 @@ ERROR.PLEASE TRY AGAIN
                                         <i class="fab fa-facebook-f"></i>
                                          Continue with Facebook
                                     </button> */}
-                                    <button class="brand-main-btn btn-filled mb-30">
+                                    <button class="main-btn btn-filled mb-30">
                                         <i class="fab fa-google"></i>
                                          Continue with Google
                                     </button>

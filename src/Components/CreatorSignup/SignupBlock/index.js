@@ -53,12 +53,7 @@ export const SignupBlock = () => {
 
 
 
-/*axios.post('/user', {          
-        "email": "srini3720@gmail.com",
-        "password": "12345"
 
-        
-});*/
 
 
 
@@ -88,6 +83,7 @@ export const SignupBlock = () => {
   function handleClick(e){
     e.preventDefault();
     console.log(userDetails);
+    
     /*const userData = await fetch('/api/creator/', {
         method: 'POST',
         mode: 'cors',
@@ -103,6 +99,34 @@ export const SignupBlock = () => {
     console.log(user);
 
     if(user) nevigate('/home')*/
+
+    axios.post('http://localhost:3000/api/creator', userDetails)
+    .then(function (response) {
+      // handle success
+      console.log(response);
+      const user=JSON.stringify(response);
+      if(user) nevigate('/creatorlogin');
+      /*console.log(response.data);
+      setName(response.data[0].name);
+      (response.data).forEach(newValue=>
+        {
+          console.log("executed")
+          setArray(oldArray => [...oldArray,newValue])
+          setNum(num+1);
+        }
+      )*/
+      
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+    .then(function () {
+      
+      //console.log("printing array 1",Array);
+      //console.log("printing number",name);
+      // always executed
+    });
   }
 
 
@@ -124,21 +148,21 @@ export const SignupBlock = () => {
   </div>
                 <div class="login-form">
                     <h2>Creator Sign Up</h2>
-                    <form>
+                    <form onSubmit={handleClick}>
                     <div class="input-group input-group-two mb-20">
-                                    <input type="text" onChange={handleChange} placeholder="Full Name" name="username"/>
+                                    <input type="text" onChange={handleChange} placeholder="Full Name" name="name" required/>
                                 </div>
                                 <div class="input-group input-group-two mb-20">
-                                    <input type="email" onChange={handleChange} placeholder="Email" name="email"/>
+                                    <input type="email" onChange={handleChange} placeholder="Email" name="email" required/>
                                 </div>
                                 <div class="input-group input-group-two mb-30">
-                                    <input type="password" onChange={handleChange} placeholder="Password" name="password"/>
+                                    <input type="password" onChange={handleChange} placeholder="Password" name="password" required/>
                                 </div>
-                                <div class="input-group input-group-two mb-30">
-                                    <input type="password" onChange={handleChange} placeholder="Confirm Password" name="confirm-password"/>
-                                </div>
+                               {/* <div class="input-group input-group-two mb-30">
+                                    <input type="password" onChange={handleChange} placeholder="Confirm Password" name="confirm-password" required/>
+  </div>*/}
                         <a href="login.html#">Forgot Password?</a>
-                        <button onClick={handleClick} class="main-btn btn-filled mt-20 login-btn">Login</button>
+                        <button type="submit" class="main-btn btn-filled mt-20 login-btn">Sign Up</button>
                         <div class="form-seperator">
                             <span>OR</span>
                         </div>

@@ -1,87 +1,15 @@
+//creator login
 import React from 'react'
 import img1 from '../../assets/img/login.png';
 import { Link, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect} from 'react';
 //import axios from 'axios';
 
 const axios = require('axios');
 
 export const LoginBlock = () => {
-  const [show, setShow] = React.useState(true);
+  const [show, setShow] = React.useState(false);
 
-  /* useEffect(() => {
-  
-    
-    instance.get('/')
-    .then(function (response) {
-      // handle success
-      //console.log(response);
-      console.log(response.data);
-      setName(response.data[0].name);
-      (response.data).forEach(newValue=>
-        {
-          console.log("executed")
-          setArray(oldArray => [...oldArray,newValue])
-          setNum(num+1);
-        }
-      )
-      
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
-    .then(function () {
-      
-      console.log("printing array 1",Array);
-      console.log("printing number",name);
-      // always executed
-    });
-    
-    
-    
-  },[]);*/
-
-  /* useEffect(() => {
-  
-    
-    axios.post('http://localhost:3000/api/creator/login', {          
-      "email": "srini3720@gmail.com",
-      "password": "12345"
-
-      
-})
-    .then(function (response) {
-      // handle success
-      console.log("received data",response);
-      /*console.log(response.data);
-      setName(response.data[0].name);
-      (response.data).forEach(newValue=>
-        {
-          console.log("executed")
-          setArray(oldArray => [...oldArray,newValue])
-          setNum(num+1);
-        }
-      )
-      
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
-    .then(function () {
-      
-      //console.log("printing array 1",Array);
-      //console.log("printing number",name);
-      // always executed
-    });
-    
-    
-    
-  },[]);*/
-
-
- 
 
 
   const [userDetails, setUserDetails] = React.useState({email: '', password: ''});
@@ -95,6 +23,7 @@ export const LoginBlock = () => {
         }
     });
   }
+
   async function handleClick(e){
     e.preventDefault();
     console.log(userDetails);
@@ -118,6 +47,8 @@ export const LoginBlock = () => {
     .then(function (response) {
       // handle success
       console.log(response);
+      const user=JSON.stringify(response);
+      if(user) nevigate('/home');
       /*console.log(response.data);
       setName(response.data[0].name);
       (response.data).forEach(newValue=>
@@ -132,6 +63,8 @@ export const LoginBlock = () => {
     .catch(function (error) {
       // handle error
       console.log(error);
+      setShow(true);
+      console.log(show);
     })
     .then(function () {
       
@@ -148,9 +81,16 @@ export const LoginBlock = () => {
   return (
     <>
         <div class="login-container">
-        <div class="alert alert-success" role="alert">
-  This is a primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
-</div>
+
+        {(show)&&
+
+        <div class="alert alert-danger text-center" role="alert">
+  ERROR.TRY AGAIN
+    
+    </div>}
+
+
+
         <div class=" login-logo">                
         <div class=" site-logo site-logo-text">
               <a href="index-4.html">
@@ -164,15 +104,15 @@ export const LoginBlock = () => {
           </div>
                         <div class="login-form">
                             <h2>Creator Log in</h2>
-                            <form>
+                            <form onSubmit={handleClick}>
                                 <div class="input-group input-group-two mb-20">
-                                    <input onChange={handleChange} value={userDetails.email} type="email" placeholder="Email" name="email"/>
+                                    <input onChange={handleChange} value={userDetails.email} type="email" placeholder="Email" name="email" required/>
                                 </div>
                                 <div class="input-group input-group-two mb-30">
-                                    <input onChange={handleChange} value={userDetails.password} type="password" placeholder="Password" name="password"/>
+                                    <input onChange={handleChange} value={userDetails.password} type="password" placeholder="Password" name="password" required/>
                                 </div>
                                 <a href="login.html#">Forgot Password?</a>
-                                <button onClick={handleClick} class="main-btn btn-filled mt-20 login-btn">Login</button>
+                                <button type="submit" class="main-btn btn-filled mt-20 login-btn">Login</button>
                                 <div class="form-seperator">
                                     <span>OR</span>
                                 </div>

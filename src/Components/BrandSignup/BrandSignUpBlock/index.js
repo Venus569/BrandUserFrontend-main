@@ -8,6 +8,8 @@ const axios = require('axios');
 
 
 export const BrandSignUpBlock = () => {
+  const [show, setShow] = React.useState(false);
+
   const [userDetails, setUserDetails] = React.useState({email: '', password: ''});
   const nevigate = useNavigate();
   function handleChange(e){
@@ -45,7 +47,7 @@ export const BrandSignUpBlock = () => {
   async function handleClick(e){
     e.preventDefault();
     console.log(userDetails);
-    const userData = await fetch('http://localhost:3000/api/creator', {
+    /*const userData = await fetch('http://localhost:3000/api/creator', {
         method: 'POST',
         mode: 'cors',
         credentials: 'include',
@@ -60,16 +62,14 @@ export const BrandSignUpBlock = () => {
     console.log(user);
 
     if(user) nevigate('/home')
-
-
-  }
-/* useEffect(() => {
-  
-    instance.get('/')
+*/
+axios.post('http://localhost:3000/api/employer', userDetails)
     .then(function (response) {
       // handle success
-      //console.log(response);
-      console.log(response.data);
+      console.log(response);
+      const user=JSON.stringify(response);
+      if(user) nevigate('/brandlogin');
+      /*console.log(response.data);
       setName(response.data[0].name);
       (response.data).forEach(newValue=>
         {
@@ -77,29 +77,34 @@ export const BrandSignUpBlock = () => {
           setArray(oldArray => [...oldArray,newValue])
           setNum(num+1);
         }
-      )
+      )*/
       
     })
     .catch(function (error) {
       // handle error
       console.log(error);
+      setShow(true);
+      console.log(show);
     })
     .then(function () {
       
-      console.log("printing array 1",Array);
-      console.log("printing number",name);
+      //console.log("printing array 1",Array);
+      //console.log("printing number",name);
       // always executed
     });
-    
-    
-    
-  },[]);*/
+
+  }
 
 
   return (
     <>
            <div class="brand-login-container">
+           {(show)&&
 
+<div class="alert alert-danger text-center" role="alert">
+ERROR.TRY AGAIN
+
+</div>}
 <div class=" brand-login-logo">                
 <div class=" site-logo site-logo-text">
       <a href="index-4.html">
@@ -113,21 +118,21 @@ export const BrandSignUpBlock = () => {
   </div>
                 <div class="brand-login-form">
                     <h2>Brand Sign Up Page</h2>
-                    <form>
+                    <form onSubmit={handleClick}>
                     <div class="input-group input-group-two mb-20">
-                                    <input type="text" onChange={handleChange} placeholder="Full Name" name="username"/>
+                                    <input type="text" onChange={handleChange} placeholder="Full Name" name="name" required/>
                                 </div>
                                 <div class="input-group input-group-two mb-20">
-                                    <input type="email" onChange={handleChange} placeholder="Email" name="email"/>
+                                    <input type="email" onChange={handleChange} placeholder="Email" name="email" required/>
                                 </div>
                                 <div class="input-group input-group-two mb-30">
-                                    <input type="password" onChange={handleChange} placeholder="Password" name="password"/>
+                                    <input type="password" onChange={handleChange} placeholder="Password" name="password" required/>
                                 </div>
-                                <div class="input-group input-group-two mb-30">
-                                    <input type="password" onChange={handleChange} placeholder="Confirm Password" name="confirm-password"/>
-                                </div>
+                                {/*<div class="input-group input-group-two mb-30">
+                                    <input type="password" onChange={handleChange} placeholder="Confirm Password" name="confirm-password" required/>
+  </div>*/}
                         <a href="brand-login.html#">Forgot Password?</a>
-                        <button onClick={handleClick} class="brand-main-btn btn-filled mt-20 login-btn">Login</button>
+                        <button type="submit"  class="brand-main-btn btn-filled mt-20 login-btn">Sign Up</button>
                         <div class="form-seperator">
                             <span>OR</span>
                         </div>
