@@ -7,7 +7,7 @@ import { SignupBlock } from './SignupBlock/index';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-function InfluLogin() {
+function SignUp() {
   return (
     <>
 
@@ -17,4 +17,4 @@ function InfluLogin() {
   );
 }
 
-export default InfluLogin;
+export default SignUp;

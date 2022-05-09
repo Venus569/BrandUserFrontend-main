@@ -6,8 +6,8 @@ import  img2  from '../../assets/img/shop/80x80-2.jpg';
 export const PopularProducts = () => {
   return (
     <>
-    <div class="widget popular-feeds mb-40">
-              <h5 class="widget-title">Popular Products</h5>
+    <div class="widget popular-feeds mb-40 mt-60">
+              <h5 class="widget-title">Popular Collabs</h5>
               <div class="popular-feed-loop">
                 <div class="single-popular-feed">
                   <div class="feed-img">

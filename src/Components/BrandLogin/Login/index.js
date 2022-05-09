@@ -3,8 +3,12 @@ import img1 from '../../assets/img/login.png';
 import { Link, useNavigate } from 'react-router-dom';
 const axios = require('axios');
 import { useState } from 'react';
+import { useSelector, useDispatch } from "react-redux";
+import {changeLoginSuccess} from '../../../actions/changeLoginSuccess'
 
 export const LoginBlock = () => {
+  const user = useSelector((state) => state.userReducer);
+  const dispatch = useDispatch();
 
   const [show, setShow] = useState(false);
 
@@ -44,7 +48,12 @@ export const LoginBlock = () => {
       // handle success
       console.log(response);
       const user=JSON.stringify(response);
-      if(user) nevigate('/brandlanding');
+    
+      if(response.data){ console.log("our user",response.data.name)};
+      dispatch(changeLoginSuccess(response.data));
+      if(response.data) nevigate('/brandlanding');
+
+
       /*console.log(response.data);
       setName(response.data[0].name);
       (response.data).forEach(newValue=>

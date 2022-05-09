@@ -4,20 +4,20 @@ export const PopularTags = () => {
   return (
     <>
         <div class="widget popular-tag-widget">
-                <h5 class="widget-title">Popular Tags</h5>
+                <h5 class="widget-title">Select Tags</h5>
                 <ul>
-                  <li><a href="">Rings</a></li>
-                  <li><a href="">Medical</a></li>
-                  <li><a href="">necklace</a></li>
-                  <li><a href="">Realestate</a></li>
-                  <li><a href="">Erotic Dance</a></li>
-                  <li><a href="">bangles</a></li>
-                  <li><a href="">hard ring</a></li>
-                  <li><a href="">Find Influencer</a></li>
-                  <li><a href="">silver braclet</a></li>
-                  <li><a href="">earring</a></li>
-                  <li><a href="">copper bracelet</a></li>
-                  <li><a href="">tech</a></li>
+                  <li><button class="active">Rings</button></li>
+                  <li><button>Medical</button></li>
+                  <li><button>necklace</button></li>
+                  <li><button>Realestate</button></li>
+                  <li><button class="active">Erotic Dance</button></li>
+                  <li><button>bangles</button></li>
+                  <li><button>hard ring</button></li>
+                  <li><button>Find Influencer</button></li>
+                  <li><button class="active">silver braclet</button></li>
+                  <li><button>earring</button></li>
+                  <li><button>copper bracelet</button></li>
+                  <li><button>tech</button></li>
                 </ul>
               </div>
     </>

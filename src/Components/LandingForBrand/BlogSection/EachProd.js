@@ -4,6 +4,8 @@ import prodimg from '../../assets/img/shop/01.jpg';
 import img1 from '../../assets/img/influencerbanner/01.jpg';
 import img2 from '../../assets/img/influencers/5.jpg';
 
+import { Link } from 'react-router-dom'
+
 
 export const EachProd = ({followers,description,profImg,name}) => {
   return (
@@ -20,7 +22,7 @@ export const EachProd = ({followers,description,profImg,name}) => {
         </div>
         <div class="desc text-center">
             <h3 style={{fontSize:"20px"}}>
-                <a href="shop-detail.html">{name} </a>
+                <Link to="/creatorprofile">{name} </Link>
             </h3>
             <div style={{overflow:"auto",color:"gray",marginTop:"30px",width:"100%",height:"60px"}} >{description}</div>
             <h6 class="mt-10">

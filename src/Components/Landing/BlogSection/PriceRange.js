@@ -1,11 +1,39 @@
 import React from 'react'
 import { Component, ReactNode, useEffect } from 'react';
 //import IonRangeSlider from 'react-ion-slider'
+import Stack from '@mui/material/Stack';
 import Slider from '@mui/material/Slider';
 
 
 
 export const PriceRange = () => {
+  
+  const [value, setValue] = React.useState([20, 37]);
+  
+  function valuetext(value) {
+    return `${(value*10)}°C`;
+  }
+
+
+
+  const marks = [
+    {
+      value: 0,
+    },
+    {
+      value: 20,
+    },
+    {
+      value: 37,
+    },
+    {
+      value: 100,
+    },
+  ];
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
 
   /*  useEffect(()=>{
         const script = document.createElement('script');
@@ -24,8 +52,20 @@ export const PriceRange = () => {
     <div class="widget socail-widget mb-40">
     <h5 class="widget-title">Price</h5>
     
-    <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" />
-
+    <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
+    <p>0$</p>
+    <Slider
+        aria-label="Always visible"
+        value={value}
+        //valueLabelFormat={valueLabelFormat}
+        onChange={handleChange}
+        valueLabelDisplay="auto"
+        getAriaValueText={valuetext}
+        step={10}
+        marks={marks}
+      />
+     <p>1000$</p>
+    </Stack>
 
   </div>
   </>

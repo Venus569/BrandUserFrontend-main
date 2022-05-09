@@ -1,6 +1,11 @@
 import React from 'react'
 import { EachProd } from './EachProd';
 import { useState,useEffect } from 'react';
+import { useSelector, useDispatch } from "react-redux";
+import {changeLoginStatus} from '../../../actions/changeLoginStatus'
+import { changeUsersAge } from "../../../actions/changeUsersAge";
+import {Link} from 'react-router-dom'
+
 
 const axios = require('axios');
 
@@ -12,10 +17,15 @@ const instance2 = axios.create({
 
 
 export const BannerBox = () => {
-
+  const user = useSelector((state) => state.userReducer);
+const dispatch = useDispatch();
   const[Array,setArray]=useState([]);
- 
+  const [loginStatus, setLogin] = useState(user.loginStatus);
+  const [age, setAge] = useState(user.age);
+  //const [loginStatus,setloginStatus]=React.useState(true);
 
+
+console.log(loginStatus);
 
   useEffect(() => {
   
@@ -54,7 +64,11 @@ export const BannerBox = () => {
   return (
     <>
       <div class=" restaurant-tab-area">
-                            
+      {/*{user.loginStatus?<p>LoggedIn</p>:<p>Not LoggedIn</p>}
+           <Link to='/brandlanding'>Go to homepage</Link>                 
+                          
+      <button onClick={ ()=>{dispatch(changeLoginStatus(user.loginStatus))}}>click here</button>
+      */}
       {
     Array.length>0 &&
 

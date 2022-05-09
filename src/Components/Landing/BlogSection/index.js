@@ -1,7 +1,6 @@
 import React from 'react'
 //import { PopularPost } from './PopularPost'
 import { PopularProducts } from './PopularProducts'
-import { Search } from './Search'
 import { PriceRange } from './PriceRange'
 import { ColorWidget } from './ColorWidget'
 //import { InstaFeed } from './InstaFeed'
@@ -15,12 +14,11 @@ import { BannerBox } from './BannerBox'
 export const BlogSection = () => {
   return (
     <section class="Shop-section pt-120 pb-120 pl-80 pr-80">
-      <div class="container-fluid">
+      <div class="container">
         <div class="row justify-content-center">
          
          <div class="col-lg-3 col-md-10 col-sm-10">
             <div class="sidebar">
-              <Search/>
               <PopularProducts/>
              
               <PriceRange/>

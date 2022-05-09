@@ -13,7 +13,7 @@ import '../assets/css/ion.rangeSlider.min.css';
 import '../assets/css/default.css';
 import '../assets/css/style.css';
 import { InstagramFeedSection } from './InstagramFeedSection';
-import { NavBar } from '../Navbar';
+import { NavBar2 } from './Navbar2';
 import BreadcrumbArea from './BreadcrumbArea';
 //import { Search } from './Components/BlogSection/Search';
 import { BlogSection } from './BlogSection';
@@ -25,7 +25,7 @@ import "slick-carousel/slick/slick-theme.css";
 function BrandLanding() {
   return (
     <>
-      <NavBar/>
+      <NavBar2/>
       <BreadcrumbArea />
       <BlogSection />
       <InstagramFeedSection />

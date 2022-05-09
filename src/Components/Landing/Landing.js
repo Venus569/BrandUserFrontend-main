@@ -1,7 +1,7 @@
 
 
 import { InstagramFeedSection } from './InstagramFeedSection';
-import { NavBar } from '../Navbar';
+import { NavBar2 } from './Navbar2';
 //import BreadcrumbArea from './BreadcrumbArea';
 //import { Search } from './Components/BlogSection/Search';
 import { BlogSection } from './BlogSection';
@@ -13,7 +13,7 @@ import "slick-carousel/slick/slick-theme.css";
 function Landing() {
   return (
     <>
-      <NavBar/>
+      <NavBar2/>
       <BlogSection />
       <InstagramFeedSection />
       <FooterSubscibeArea />

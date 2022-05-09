@@ -49,7 +49,7 @@ export const EachProd = ({brand,type,description,date,fees,platforms,skills}) =>
             <p class="mt-20 mb-20">{description}</p>
             <span class="price">${fees}</span>
             
-            <a href="shop-left-style-2.html#" class="main-btn btn-unfilled mt-10">Apply</a>
+            <a href="shop-left-style-2.html#" class="main-btn btn-unfilled mt-10 mb-20">Apply</a>
             
             <span class="button-group">
                 <span><i class="far fa-heart"></i></span>

@@ -38,11 +38,14 @@ import banner1 from '../../assets/img/banner-widget.jpg';
 
 import author from '../../assets/img/author.png';
 
-
-
+import { useSelector, useDispatch } from "react-redux";
       
 
 export const BlogSection = () => {
+  const user = useSelector((state) => state.userReducer);
+  const nevigate = useNavigate();
+  const dispatch = useDispatch();
+  
   const progressbar=()=>{
 
     $(".sigma_progress").each(function() {

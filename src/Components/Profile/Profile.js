@@ -1,10 +1,9 @@
 import BreadcrumbArea from './BreadcrumbArea'
 import ProfileImageAreaBgWhite from './ProfileImageAreaBgWhite';
 import { BlogSection } from './BlogSection';
-import { FooterSubscibeArea } from './FooterSubscibeArea';
 import { FooterWidgetArea } from './FooterWidgetArea';
 import { InstagramFeedSection} from './InstagramFeedSection';
-import { NavBar } from '../Navbar';
+import { NavBar2 } from './Navbar2';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
@@ -61,12 +60,11 @@ import "slick-carousel/slick/slick-theme.css";
 function Profile() {
   return (
     <>
-        <NavBar/>
+        <NavBar2/>
         <BreadcrumbArea/>
         <ProfileImageAreaBgWhite/>
         <BlogSection/>
         <InstagramFeedSection/>
-        <FooterSubscibeArea/>
         <FooterWidgetArea/>
     </>
   );

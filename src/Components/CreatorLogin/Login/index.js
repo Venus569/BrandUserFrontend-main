@@ -3,12 +3,26 @@ import React from 'react'
 import img1 from '../../assets/img/login.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect} from 'react';
+import { useSelector, useDispatch } from "react-redux";
+import {changeLoginSuccess} from '../../../actions/changeLoginSuccess'
+import { GoogleLogin } from 'react-google-login';
 //import axios from 'axios';
 
 const axios = require('axios');
 
 export const LoginBlock = () => {
+  const user = useSelector((state) => state.userReducer);
+  const dispatch = useDispatch();
   const [show, setShow] = React.useState(false);
+  
+const responseGoogle = (response) => {
+  console.log(response);
+  console.log(response.profileObj);
+}
+
+  //<button onClick={ ()=>{dispatch(changeLoginSuccess(response.data))}}>click here</button>
+
+
 
 
 
@@ -48,7 +62,12 @@ export const LoginBlock = () => {
       // handle success
       console.log(response);
       const user=JSON.stringify(response);
-      if(user) nevigate('/home');
+      console.log(typeof(response))
+      //console.log(typeof(user))
+
+      if(response.data){ console.log("our user",response.data.name)};
+      dispatch(changeLoginSuccess(response.data));
+      if(response.data) nevigate('/creatorlanding');
       /*console.log(response.data);
       setName(response.data[0].name);
       (response.data).forEach(newValue=>
@@ -132,6 +151,13 @@ export const LoginBlock = () => {
                             </form>
                         </div>
 
+<div>google here <GoogleLogin
+    clientId="412881566679-ed0od0s7smn3lne3g68phmquqrf6m2rj.apps.googleusercontent.com"
+    buttonText="Login"
+    onSuccess={responseGoogle}
+    onFailure={responseGoogle}
+    cookiePolicy={'single_host_origin'}
+  />,</div>
                         
                         <footer class="footer-two">
                         <div class="copyright-area pt-30 pb-30">

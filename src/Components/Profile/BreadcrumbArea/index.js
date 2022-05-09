@@ -2,8 +2,12 @@ import React from 'react';
 import backimage from '../../assets/img/bg/04.jpg'
 
 /*style="background-image: url('assets/img/bg/04.jpg');"*/
+import { useSelector, useDispatch } from "react-redux";
 
 const BreadcrumbArea = () => {
+  const user = useSelector((state) => state.userReducer);
+  const nevigate = useNavigate();
+  const dispatch = useDispatch();
   return (
     <>
         <section className="breadcrumb-area" style={{backgroundImage:`url(${backimage})`}}>
