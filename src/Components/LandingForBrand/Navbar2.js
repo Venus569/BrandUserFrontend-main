@@ -11,6 +11,7 @@ export const NavBar2 = () => {
 
   const handleLogout=()=>{
     dispatch(changeLogout());
+    localStorage.removeItem('userlogintoken');
     nevigate('/creatorlogin');
   }
   return (

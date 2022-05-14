@@ -6,6 +6,8 @@ import { useEffect} from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import {changeLoginSuccess} from '../../../actions/changeLoginSuccess'
 import { GoogleLogin } from 'react-google-login';
+import FontAwesome from "react-fontawesome";
+
 //import axios from 'axios';
 
 const axios = require('axios');
@@ -67,6 +69,9 @@ const responseGoogle = (response) => {
 
       if(response.data){ console.log("our user",response.data.name)};
       dispatch(changeLoginSuccess(response.data));
+      const x =JSON.stringify(response.data);
+      console.log("strigy",x);
+      localStorage.setItem('userlogintoken', x);
       if(response.data) nevigate('/creatorlanding');
       /*console.log(response.data);
       setName(response.data[0].name);
@@ -110,7 +115,9 @@ const responseGoogle = (response) => {
 
 
 
-        <div class=" login-logo">                
+        <div class=" login-logo">    
+        
+                        
         <div class=" site-logo site-logo-text">
               <a href="index-4.html">
                <i class="flaticon-video-camera"></i>
@@ -131,7 +138,8 @@ const responseGoogle = (response) => {
                                     <input onChange={handleChange} value={userDetails.password} type="password" placeholder="Password" name="password" required/>
                                 </div>
                                 <a href="login.html#">Forgot Password?</a>
-                                <button type="submit" class="main-btn btn-filled mt-20 login-btn">Login</button>
+                                <button type="submit" class="main-btn btn-filled mt-20 login-btn">Login
+</button>
                                 <div class="form-seperator">
                                     <span>OR</span>
                                 </div>
@@ -158,6 +166,7 @@ const responseGoogle = (response) => {
     onFailure={responseGoogle}
     cookiePolicy={'single_host_origin'}
   />,</div>
+
                         
                         <footer class="footer-two">
                         <div class="copyright-area pt-30 pb-30">

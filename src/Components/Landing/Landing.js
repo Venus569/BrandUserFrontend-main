@@ -13,6 +13,7 @@ import "slick-carousel/slick/slick-theme.css";
 function Landing() {
   return (
     <>
+    
       <NavBar2/>
       <BlogSection />
       <InstagramFeedSection />

@@ -1,9 +1,18 @@
 import React from 'react';
 import backimage from '../../assets/img/bg/04.jpg'
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+ 
 
 /*style="background-image: url('assets/img/bg/04.jpg');"*/
 
 const BreadcrumbArea = () => {
+  
+  const user = useSelector((state) => state.userReducer);
+  const nevigate = useNavigate();
+  const dispatch = useDispatch();
   return (
     <>
         <section className="breadcrumb-area" style={{backgroundImage:`url(${backimage})`}}>
@@ -11,8 +20,8 @@ const BreadcrumbArea = () => {
         <div className="container">
             <div className="profile-links">
       <div className="profile-left">
-        <h4>Jacob Thomas</h4>
-        <button>Build profile</button>
+        <h4>{user.user.name}</h4>
+        <button><Link to="/profilebuilder">Build Profile</Link></button>
         <ul>
           <li>
             <i className="fas fa-map-marker-alt"></i>

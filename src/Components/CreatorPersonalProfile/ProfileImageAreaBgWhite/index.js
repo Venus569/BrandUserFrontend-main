@@ -1,8 +1,22 @@
 import React from 'react'
 import profileImage from '../../assets/img/influencers/profile.jpg';
 
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+ 
+
+/*style="background-image: url('assets/img/bg/04.jpg');"*/
+
+
+  
+ 
 
 const ProfileImageAreaBgWhite = () => {
+  const user = useSelector((state) => state.userReducer);
+  const nevigate = useNavigate();
+  const dispatch = useDispatch();
   return (
     <><div class="profile-image-area bg-white">
     <div class="container">
@@ -10,7 +24,7 @@ const ProfileImageAreaBgWhite = () => {
         <div class="col-lg-6">
           <div class="social-profile">
           <a class="profile-image">
-            <img src={profileImage} alt="profile"></img>
+            <img src={user.user.profileImg} alt="profile" style={{height:"150px",width:"150px"}}></img>
           </a>
           <div class="social-links">
             <a href="influencer-profile.html#"><i class="fab fa-facebook-f"></i></a>

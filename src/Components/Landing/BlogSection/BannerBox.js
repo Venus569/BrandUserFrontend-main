@@ -14,6 +14,53 @@ const instance2 = axios.create({
   
 });
 
+const handleparser=()=>{/*
+  axios.get('https://mojapp.in/@piyanka_mongia', {
+    params: {
+
+    }
+  })
+  .then(function (response) {
+   
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
+  .then(function () {
+    // always executed
+  });  */
+
+ /* fetch("https://mojapp.in/@piyanka_mongia", {
+        method: "GET",
+        credentials: "include",
+        headers: {
+          "Access-Control-Allow-Credentials": true,
+        },
+      })
+        .then((response) => {
+         console.log(response);
+        })
+
+        .catch((err) => {
+          console.log(err);
+        });*/
+        function makeHttpObject() {
+          if("XMLHttpRequest" in window)return new XMLHttpRequest();
+          else if("ActiveXObject" in window)return new ActiveXObject("Msxml2.XMLHTTP");
+        }
+        
+        var request = makeHttpObject();
+        request.open("GET", "https://mojapp.in/@piyanka_mongia", true);
+        request.send(null);
+        request.onreadystatechange = function() {
+          if (request.readyState == 4)
+            console.log(request.responseText);
+        };
+
+
+
+}
 
 
 export const BannerBox = () => {
@@ -64,6 +111,10 @@ console.log(loginStatus);
   return (
     <>
       <div class=" restaurant-tab-area">
+
+      <button onClick={handleparser}>clicsk here</button>
+
+
       {/*{user.loginStatus?<p>LoggedIn</p>:<p>Not LoggedIn</p>}
            <Link to='/brandlanding'>Go to homepage</Link>                 
                           
