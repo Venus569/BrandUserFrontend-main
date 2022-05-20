@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {changeLogout} from '../../actions/changeLogout'
 
 
-export const NavBar2 = () => {
+export const NavBar2 = ({userdet}) => {
   const user = useSelector((state) => state.userReducer);
   const nevigate = useNavigate();
   const dispatch = useDispatch();
@@ -75,7 +75,9 @@ export const NavBar2 = () => {
                        
                         
                         <li class="menu-item">
-                          <Link to="/profile"> welcome back {user.user.name} </Link>
+                          
+                          <Link to="/brandlanding"> Welcome Back   .<span style={{textTransform:"uppercase",fontSize:"1.3rem",color:"#85AEE1"}}>{userdet.name} </span></Link>
+
                         </li>
                        
                       </ul>

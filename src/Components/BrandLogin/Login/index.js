@@ -1,5 +1,5 @@
 import React from 'react'
-import img1 from '../../assets/img/login.png';
+
 import { Link, useNavigate } from 'react-router-dom';
 const axios = require('axios');
 import { useState } from 'react';
@@ -51,6 +51,12 @@ export const LoginBlock = () => {
     
       if(response.data){ console.log("our user",response.data.name)};
       dispatch(changeLoginSuccess(response.data));
+
+      const x =JSON.stringify(response.data);
+      console.log("strigy",x);
+      localStorage.setItem('userlogintoken', x);
+
+      
       if(response.data) nevigate('/brandlanding');
 
 
@@ -144,6 +150,7 @@ ERROR.PLEASE TRY AGAIN
                                 </div>
                                 <a href="brand-login.html#">Forgot Password?</a>
                                 <button type="submit"  class="brand-main-btn btn-filled mt-20 login-btn">Login</button>
+                                <Link to='/creatorlogin' class='mt-10'>Not a recruiter?Login to your Creator Account</Link>
                                 <div class="form-seperator">
                                     <span>OR</span>
                                 </div>
@@ -158,7 +165,7 @@ ERROR.PLEASE TRY AGAIN
                                     </button>
                                 </div>
                                 <p>Don't have an Account?
-                                <Link to="/signup" class="d-inline-block">Create One</Link>
+                                <Link to="/brandsignup" class="d-inline-block">Create One</Link>
                                 </p>
                             </form>
                         </div>

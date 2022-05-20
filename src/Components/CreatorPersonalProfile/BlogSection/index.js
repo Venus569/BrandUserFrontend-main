@@ -2,37 +2,33 @@ import React from 'react'
 import { useEffect } from 'react';
 import $ from 'jquery'
 
-import s1 from '../../assets/img/influencers/profile/s-1.jpg';
-import s2 from '../../assets/img/influencers/profile/s-2.jpg';
-import s3 from '../../assets/img/influencers/profile/s-3.jpg';
-import s4 from '../../assets/img/influencers/profile/s-4.jpg';
 import pro2 from '../../assets/img/influencers/profile/2.jpg';
 
 import p1 from '../../assets/img/influencers/profile/p-1.jpg';
-import p2 from '../../assets/img/influencers/profile/p-2.jpg';
-import p3 from '../../assets/img/influencers/profile/p-3.jpg';
-import p4 from '../../assets/img/influencers/profile/p-4.jpg';
-import p5 from '../../assets/img/influencers/profile/p-5.jpg';
+import p2 from '../../assets/img/influencers/profile/p-1.jpg';
+import p3 from '../../assets/img/influencers/profile/p-1.jpg';
+import p4 from '../../assets/img/influencers/profile/p-1.jpg';
+import p5 from '../../assets/img/influencers/profile/p-1.jpg';
 
 import authorSmall from '../../assets/img/author-small.png'
 
 import av1 from '../../assets/img/blog-details/avatar-1.jpg';
-import av2 from '../../assets/img/blog-details/avatar-2.jpg';
-import av3 from '../../assets/img/blog-details/avatar-3.jpg';
+import av2 from '../../assets/img/blog-details/avatar-1.jpg';
+import av3 from '../../assets/img/blog-details/avatar-1.jpg';
 
 import recent1 from '../../assets/img/recent-post-wid/04.png';
-import recent2 from '../../assets/img/recent-post-wid/05.png';
-import recent3 from '../../assets/img/recent-post-wid/06.png';
+import recent2 from '../../assets/img/recent-post-wid/04.png';
+import recent3 from '../../assets/img/recent-post-wid/04.png';
 
 import insta1 from '../../assets/img/instagram-wid/01.jpg';
 import insta2 from '../../assets/img/instagram-wid/02.jpg';
-import insta3 from '../../assets/img/instagram-wid/03.jpg';
-import insta4 from '../../assets/img/instagram-wid/04.jpg';
-import insta5 from '../../assets/img/instagram-wid/05.jpg';
-import insta6 from '../../assets/img/instagram-wid/06.jpg';
-import insta7 from '../../assets/img/instagram-wid/07.jpg';
-import insta8 from '../../assets/img/instagram-wid/08.jpg';
-import insta9 from '../../assets/img/instagram-wid/09.jpg';
+import insta3 from '../../assets/img/instagram-wid/01.jpg';
+import insta4 from '../../assets/img/instagram-wid/02.jpg';
+import insta5 from '../../assets/img/instagram-wid/01.jpg';
+import insta6 from '../../assets/img/instagram-wid/02.jpg';
+import insta7 from '../../assets/img/instagram-wid/01.jpg';
+import insta8 from '../../assets/img/instagram-wid/02.jpg';
+import insta9 from '../../assets/img/instagram-wid/01.jpg';
 
 import banner1 from '../../assets/img/banner-widget.jpg';
 
@@ -164,35 +160,35 @@ $(progressCount).animate({
                   </div>
                   <div class="col-lg-4 col-md-6">
                     <div class="portfolio-gallery">
-                    <a href="assets/img/influencers/profile/p-2.jpg" class="portfolio-image popup-image d-block">
+                    <a href="assets/img/influencers/profile/p-1.jpg" class="portfolio-image popup-image d-block">
                       <img src={p2} alt="img"></img>
                     </a>
                   </div>
                   </div>
                   <div class="col-lg-4 col-md-6">
                     <div class="portfolio-gallery">
-                    <a href="assets/img/influencers/profile/p-3.jpg" class="portfolio-image popup-image d-block">
+                    <a href="assets/img/influencers/profile/p-1.jpg" class="portfolio-image popup-image d-block">
                       <img src={p3} alt="img"></img>
                     </a>
                   </div>
                   </div>
                   <div class="col-lg-4 col-md-6">
                     <div class="portfolio-gallery">
-                    <a href="assets/img/influencers/profile/p-4.jpg" class="portfolio-image popup-image d-block">
+                    <a href="assets/img/influencers/profile/p-1.jpg" class="portfolio-image popup-image d-block">
                       <img src={p4} alt="img"></img>
                     </a>
                   </div>
                   </div>
                   <div class="col-lg-4 col-md-6">
                     <div class="portfolio-gallery">
-                    <a href="assets/img/influencers/profile/p-5.jpg" class="portfolio-image popup-image d-block">
+                    <a href="assets/img/influencers/profile/p-1.jpg" class="portfolio-image popup-image d-block">
                       <img src={p5} alt="img"></img>
                     </a>
                   </div>
                   </div>
                   <div class="col-lg-4 col-md-6">
                     <div class="portfolio-gallery">
-                    <a href="assets/img/influencers/profile/p-6.jpg" class="portfolio-image popup-image d-block">
+                    <a href="assets/img/influencers/profile/p-1.jpg" class="portfolio-image popup-image d-block">
                       <img src={p5} alt="img"></img>
                     </a>
                   </div>

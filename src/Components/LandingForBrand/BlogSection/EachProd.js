@@ -1,8 +1,5 @@
 import React from 'react'
-import prodimg from '../../assets/img/shop/01.jpg';
 
-import img1 from '../../assets/img/influencerbanner/01.jpg';
-import img2 from '../../assets/img/influencers/5.jpg';
 
 import { Link } from 'react-router-dom'
 

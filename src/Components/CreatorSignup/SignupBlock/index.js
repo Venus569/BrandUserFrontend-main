@@ -163,6 +163,7 @@ export const SignupBlock = () => {
   </div>*/}
                         <a href="login.html#">Forgot Password?</a>
                         <button type="submit" class="main-btn btn-filled mt-20 login-btn">Sign Up</button>
+                        <Link to='/brandlogin' class='mt-10'>Not a creator?Login to your Brand Account</Link>
                         <div class="form-seperator">
                             <span>OR</span>
                         </div>
@@ -176,8 +177,8 @@ export const SignupBlock = () => {
                                  Continue with Google
                             </button>
                         </div>
-                        <p>Don't have an Account?
-                        <Link to="/signup" class="d-inline-block">Create One</Link>
+                        <p>Already have an account
+                        <Link to="/creatorlogin" class="d-inline-block">Login here</Link>
                         </p>
                     </form>
                 </div>

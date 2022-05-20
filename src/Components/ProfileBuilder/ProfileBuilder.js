@@ -1,25 +1,18 @@
-
-
-import { InstagramFeedSection } from './InstagramFeedSection';
+import React from 'react'
 import { NavBar2 } from './Navbar2';
-//import BreadcrumbArea from './BreadcrumbArea';
-//import { Search } from './Components/BlogSection/Search';
-import { BlogSection } from './BlogSection';
+import BreadcrumbArea from './BreadcrumbArea';
+import { ProfileBuilderFormSection } from './ProfileBuilderFormSection';
 import { FooterSubscibeArea } from './FooterSubscibeArea';
+import { useSelector, useDispatch } from "react-redux"
 import { useNavigate } from 'react-router-dom';
 import { changeLoginSuccess } from '../../actions/changeLoginSuccess';
-
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { useSelector, useDispatch } from "react-redux"
-import React from 'react';
+//import React from 'react';
 import { useEffect } from 'react';
-function Landing() {
+
+export const ProfileBuilder = () => {
   const user = useSelector((state) => state.userReducer);
   const dispatch = useDispatch();
   const nevigate = useNavigate();
-
 
   const [show, setShow] = React.useState(false);
 
@@ -44,22 +37,18 @@ function Landing() {
   else
   setShow(true);
   },[]);
-
-
-
+  
   return (
     <>{
 
-    show&&
-    <>
-    
-      <NavBar2 userdeta={user.user}/>
-      <BlogSection />
-      <InstagramFeedSection />
-      <FooterSubscibeArea />
-    </>
+      show&&
+      <>
+      
+      <BreadcrumbArea />
+      <ProfileBuilderFormSection />
+       <FooterSubscibeArea />
+       <NavBar2 userdeta={user.user}/>
+      </>
 }</>
-  );
+  )
 }
-
-export default Landing;

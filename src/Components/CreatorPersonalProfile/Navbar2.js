@@ -4,13 +4,14 @@ import { useSelector, useDispatch } from "react-redux";
 import {changeLogout} from '../../actions/changeLogout'
 
 
-export const NavBar2 = () => {
-  const user = useSelector((state) => state.userReducer);
+export const NavBar2 = ({userdet}) => {
+  //const user = useSelector((state) => state.userReducer);
   const nevigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleLogout=()=>{
     dispatch(changeLogout());
+    localStorage.removeItem('userlogintoken');
     nevigate('/creatorlogin');
   }
   return (
@@ -47,13 +48,13 @@ export const NavBar2 = () => {
           >
           
             <div class="site-logo site-logo-text">
-              <a href="index.html">
+              <Link to='/creatorlanding'>
                 <i class="flaticon-video-camera"></i>
                 <div class="site-logo-text">
                   <h3>Fansbase</h3>
                   <h6>Influencer site</h6>
                 </div>
-              </a>
+              </Link>
             </div>
           
             <div
@@ -74,7 +75,7 @@ export const NavBar2 = () => {
                        
                         
                         <li class="menu-item">
-                          <Link to="/profile"> welcome back {user.user.name} </Link>
+                          <Link to="/creatorprofile"> Welcome Back   .<span style={{textTransform:"uppercase",fontSize:"1.3rem",color:"#FD4401"}}>{userdet.name} </span></Link>
                         </li>
                        
                       </ul>
@@ -86,24 +87,9 @@ export const NavBar2 = () => {
            
             <div class="menu-right-buttons">
               
-              <div class="login-btn">
-                <a href="login.html" id="loginBtn"
-                  ><i class="fal fa-user"></i>
-                </a>
-              </div>
               
-              <div class="toggle">
-                <a
-                  ><i class="fal fa-bars"></i>
-                </a>
 
-               {/* <select name="cars" id="cars">
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="opel">Opel</option>
-    <option value="audi">Audi</option>
-  </select>*/}
-              </div>
+              
               <div>
               <button className='main-btn btn-unfilled'  onClick={handleLogout}>LOGOUT</button>
               </div>

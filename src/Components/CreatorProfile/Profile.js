@@ -40,7 +40,8 @@ import "slick-carousel/slick/slick-theme.css";
     <link rel="stylesheet" href="assets/css/style.css" />*/
 
 
-
+/*
+19-05
     import '../assets/css/animate.min.css';
     import '../assets/css/bootstrap.min.css';
     import '../assets/css/font-awesome.min.css';
@@ -53,7 +54,7 @@ import "slick-carousel/slick/slick-theme.css";
     import '../assets/css/bootstrap-datepicker.css';
     import '../assets/css/ion.rangeSlider.min.css';
     import '../assets/css/default.css';
-    import '../assets/css/style.css';
+    import '../assets/css/style.css';*/
     
 
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import img1 from '../../assets/img/login.png';
 import { Link, useNavigate } from 'react-router-dom';
 
 const axios = require('axios');
@@ -133,6 +132,8 @@ ERROR.TRY AGAIN
   </div>*/}
                         <a href="brand-login.html#">Forgot Password?</a>
                         <button type="submit"  class="brand-main-btn btn-filled mt-20 login-btn">Sign Up</button>
+                        <Link to='/creatorlogin' class='mt-10'>Not a recruiter?Login to your Creator Account</Link>
+
                         <div class="form-seperator">
                             <span>OR</span>
                         </div>
@@ -146,8 +147,8 @@ ERROR.TRY AGAIN
                                  Continue with Google
                             </button>
                         </div>
-                        <p>Don't have an Account?
-                        <Link to="/signup" class="d-inline-block">Create One</Link>
+                        <p>Already have an Account?
+                        <Link to="/brandlogin" class="d-inline-block">Login here</Link>
                         </p>
                     </form>
                 </div>

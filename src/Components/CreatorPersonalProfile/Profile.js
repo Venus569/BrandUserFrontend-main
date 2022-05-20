@@ -39,7 +39,7 @@ import "slick-carousel/slick/slick-theme.css";
     <!--====== Style css ======-->
     <link rel="stylesheet" href="assets/css/style.css" />*/
 
-
+/*19-05
 
     import '../assets/css/animate.min.css';
     import '../assets/css/bootstrap.min.css';
@@ -53,15 +53,45 @@ import "slick-carousel/slick/slick-theme.css";
     import '../assets/css/bootstrap-datepicker.css';
     import '../assets/css/ion.rangeSlider.min.css';
     import '../assets/css/default.css';
-    import '../assets/css/style.css';
+    import '../assets/css/style.css';*/
     
-
+    import { useSelector, useDispatch } from "react-redux"
+    import React from 'react';
+    import { useEffect } from 'react';
 
 
 function CreatorPersonalProfile() {
+  const user = useSelector((state) => state.userReducer);
+  const dispatch = useDispatch();
+
+  const [show, setShow] = React.useState(false);
+  useEffect(() => {
+    console.log("userr effect");
+    // Update the document title using the browser API
+    if(!(user.user))
+    { 
+      var x=localStorage.getItem('userlogintoken');
+     console.log("user token");
+      console.log(x);
+    if(!x)
+    {
+      nevigate('/creatorlogin');
+    }
+    else{
+      var y=JSON.parse(x);
+    dispatch(changeLoginSuccess(y));
+    setShow(true);
+  }
+  }
+  else
+  setShow(true);
+  },[]);
   return (
-    <>
-        <NavBar2/>
+    <>{
+
+      show&&
+      <>
+        <NavBar2 userdet={user.user}/>
         <BreadcrumbArea/>
         <ProfileImageAreaBgWhite/>
         <BlogSection/>
@@ -69,6 +99,7 @@ function CreatorPersonalProfile() {
         <FooterSubscibeArea/>
         <FooterWidgetArea/>
     </>
+}</>
   );
 }
 

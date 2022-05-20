@@ -23,9 +23,9 @@ const ProfileImageAreaBgWhite = () => {
       <div class="row">
         <div class="col-lg-6">
           <div class="social-profile">
-          <a class="profile-image">
-            <img src={user.user.profileImg} alt="profile" style={{height:"150px",width:"150px"}}></img>
-          </a>
+          <div class="profile-image" style={{height:"150px",width:"150px",border:"solid thin black",backgroundColor:"white",borderRadius:"50%",display:"inline-block" }}>
+            <img src={user.user.profileImg} alt="profile" ></img>
+          </div>
           <div class="social-links">
             <a href="influencer-profile.html#"><i class="fab fa-facebook-f"></i></a>
             <a href="influencer-profile.html#"><i class="fab fa-twitter"></i></a>

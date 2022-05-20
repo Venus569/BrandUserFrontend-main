@@ -1,12 +1,10 @@
 //creator login
 import React from 'react'
-import img1 from '../../assets/img/login.png';
 import { Link, useNavigate } from 'react-router-dom';
-import { useEffect} from 'react';
+
 import { useSelector, useDispatch } from "react-redux";
 import {changeLoginSuccess} from '../../../actions/changeLoginSuccess'
 import { GoogleLogin } from 'react-google-login';
-import FontAwesome from "react-fontawesome";
 
 //import axios from 'axios';
 
@@ -137,9 +135,12 @@ const responseGoogle = (response) => {
                                 <div class="input-group input-group-two mb-30">
                                     <input onChange={handleChange} value={userDetails.password} type="password" placeholder="Password" name="password" required/>
                                 </div>
-                                <a href="login.html#">Forgot Password?</a>
+                                <Link to='/creatorlogin'>Forgot Password?</Link>
+                               
                                 <button type="submit" class="main-btn btn-filled mt-20 login-btn">Login
-</button>
+                                </button>
+                                <Link to='/brandlogin' class='mt-10'>Not a creator?Login to your Brand Account</Link>
+                                                                
                                 <div class="form-seperator">
                                     <span>OR</span>
                                 </div>
@@ -154,7 +155,7 @@ const responseGoogle = (response) => {
                                     </button>
                                 </div>
                                 <p>Don't have an Account?
-                                <Link to="/signup" class="d-inline-block">Create One</Link>
+                                <Link to="/creatorsignup" class="d-inline-block">Create One</Link>
                                 </p>
                             </form>
                         </div>

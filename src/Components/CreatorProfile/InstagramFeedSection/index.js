@@ -1,10 +1,10 @@
 import React from 'react'
 import img1 from '../../assets/img/instagram/01.jpg';
-import img2 from '../../assets/img/instagram/02.jpg';
-import img3 from '../../assets/img/instagram/03.jpg';
-import img4 from '../../assets/img/instagram/04.jpg';
-import img5 from '../../assets/img/instagram/05.jpg';
-import img6 from '../../assets/img/instagram/06.jpg';
+import img2 from '../../assets/img/instagram/01.jpg';
+import img3 from '../../assets/img/instagram/01.jpg';
+import img4 from '../../assets/img/instagram/01.jpg';
+import img5 from '../../assets/img/instagram/01.jpg';
+import img6 from '../../assets/img/instagram/02.jpg';
 
 import Slider from "react-slick";
 

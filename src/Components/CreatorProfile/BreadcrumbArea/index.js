@@ -22,7 +22,7 @@ const BreadcrumbArea = () => {
         <div className="container">
             <div className="profile-links">
       <div className="profile-left">
-        <h4>{user.user.name}</h4>
+        <h4>full name</h4>
         <ul>
           <li>
             <i className="fas fa-map-marker-alt"></i>

@@ -1,7 +1,6 @@
 import React from 'react'
 import  img0  from '../../assets/img/shop/80x80-0.jpg';
-import  img1  from '../../assets/img/shop/80x80-1.jpg';
-import  img2  from '../../assets/img/shop/80x80-2.jpg';
+
 
 export const PopularProducts = () => {
   return (
@@ -20,7 +19,7 @@ export const PopularProducts = () => {
                 </div>
                 <div class="single-popular-feed">
                   <div class="feed-img">
-                    <img src={img1} alt="Image"/>
+                    <img src={img0} alt="Image"/>
                   </div>
                   <div class="feed-desc desc">
                     <h6><a href="shop-detail.html">Silver Pendant.</a></h6>
@@ -29,7 +28,7 @@ export const PopularProducts = () => {
                 </div>
                 <div class="single-popular-feed">
                   <div class="feed-img">
-                    <img src={img2} alt="Image"/>
+                    <img src={img0} alt="Image"/>
                   </div>
                   <div class="feed-desc desc">
                     <h6><a href="shop-detail.html">Diamond Ring.</a></h6>
