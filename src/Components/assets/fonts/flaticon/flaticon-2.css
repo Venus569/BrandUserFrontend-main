@@ -1,0 +1,53 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("flaticon-5101b2d4bff9f360c2e4c247ef3f4924.ttf") format("truetype"),
+url("flaticon-5101b2d4bff9f360c2e4c247ef3f4924.woff") format("woff"),
+url("flaticon-5101b2d4bff9f360c2e4c247ef3f4924.woff2") format("woff2"),
+url("flaticon-5101b2d4bff9f360c2e4c247ef3f4924.eot#iefix") format("embedded-opentype"),
+url("flaticon-5101b2d4bff9f360c2e4c247ef3f4924.svg#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, 
+i[class*=" flaticon-"]:before,
+span[class^="flaticon-"]:before, 
+span[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-phone:before {
+    content: "\f101";
+}
+.flaticon-message:before {
+    content: "\f102";
+}
+.flaticon-hot-sale:before {
+    content: "\f103";
+}
+.flaticon-video-camera:before {
+    content: "\f104";
+}
+.flaticon-man:before {
+    content: "\f105";
+}
+.flaticon-female-student:before {
+    content: "\f106";
+}
+.flaticon-star:before {
+    content: "\f107";
+}
+.flaticon-instagram-logo:before {
+    content: "\f108";
+}
+.flaticon-avatar:before {
+    content: "\f109";
+}
+.flaticon-heart:before {
+    content: "\f10a";
+}
